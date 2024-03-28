@@ -57,3 +57,19 @@ chemeq {
     background-color: white;
     color: black;
 }
+
+.hc-smaller-title{
+    display: block;
+    font-size: large;
+    font-weight: bold;
+    font-style: normal;
+    background-color: white;
+    color: black;
+}
+
+.hc-sentence{
+    display: block;
+    font-size: normal;
+    font-weight:bold;
+    font-style:normal;
+}
