@@ -73,3 +73,12 @@ chemeq {
     font-weight:bold;
     font-style:normal;
 }
+
+.hc-element {
+    display: block;
+    height: 100px;
+    width: 80px;
+    position: relative;
+    border: 5px;
+    border-color: black;
+}
