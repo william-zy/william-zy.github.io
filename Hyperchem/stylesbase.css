@@ -82,3 +82,9 @@ chemeq {
     border: 5px;
     border-color: black;
 }
+
+.hc-short-text{
+    font-size: normal;
+    font-weight:bold;
+    font-style:normal;
+}
