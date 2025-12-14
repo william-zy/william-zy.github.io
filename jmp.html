@@ -2,30 +2,20 @@
     <title>快速跳题服务</title>
   </head>
   <body>
-    
-        <!-- <select style="width: 300px;" name="programTypeId">
-        <option value="62">洛谷</option>
-        <option value="68">Codeforces</option>
-        <option value="62">UVA</option>
-        <option value="62">AtCoder</option>
-        </select>--> <!-- <div><span class="programTypeNotice notice smaller"></span></div>-->
-    
-    <!-- <input type="checkbox" id="CheckBox1">
-    <label style="font-size: 1.2rem; margin-left: 1em;" for="toggleEditorCheckbox" class="toggleEditorCheckboxLabel">CheckBox</label> -->
     <div class="small PID" style="float: left; margin-top: 0.2em; display: block;">
-        <label for="PIDlg" style="margin-right: 1em;">洛谷问题id(支持P、CF、SP、UVA、U)</label>
-        <input style="width:6em;" type="string" id="PIDlg" name="PIDlg" value="P1000">
+        <label style="margin-right: 1em;">洛谷问题id(支持P、CF、SP、UVA、U、T)</label>
+        <input style="width:6em;" type="string" id="PIDlg" value="P1000">
     </div>
         <br/>
-        <button type="jmplg" class="btn">洛谷跳题</button>
+        <button type="button" onclick="jmplg()">洛谷跳题</button>
         <br/>
         <br/>
     <div class="small PID" style="float: left; margin-top: 0.2em; display: block;">
-        <label for="PIDcf" style="margin-right: 1em;">CodeForces比赛id</label>
-        <input style="width:6em;" type="string" id="PIDcf" name="PIDcf" value="1">
+        <label style="margin-right: 1em;">CodeForces比赛id</label>
+        <input style="width:6em;" type="string" id="PIDcf" value="1">
     </div>
         <label for="CFbstmid" style="margin-left: 1em;">CodeForces比赛中的题目ID</label>
-        <select style="width: 50px;" name="CFbstmid">
+        <select style="width: 50px;" id="CFbstmid">
         <option value="1">A</option>
         <option value="2">B</option>
         <option value="3">C</option>
@@ -37,16 +27,38 @@
         <option value="9">I</option>
         </select> <div><span class="programTypeNotice notice smaller"></span></div>
         <br/>
-        <button type="jmpcf" class="btn">CF跳题</button>
+        <button type="button" onclick="jmpcf()">CF跳题</button>
         <br/>
     <div class="small PID" style="float: left; margin-top: 0.2em; display: block;">
         <label for="PIDuva" style="margin-right: 1em;">UVA问题id</label>
-        <input style="width:6em;" type="string" id="PIDuva" name="PIDuva" value="UVA1">
+        <input style="width:6em;" type="string" id="PIDuva" value="UVA1">
     </div>
         <br/>
-        <button type="jmpuva" class="btn">UVA跳题</button>
+        <button type="button" onclick="jmpuva()">UVA跳题</button>
         <br/>
         <br/>
       
       <noscript><strong>请允许Javascript，否则网站可能无法正常使用，感谢您的支持！</strong></noscript>
-</body></html>
+
+    <script type="text/javascript">
+        function jmp(url){
+            location.replace(url);
+        }
+        function jmplg(){
+            console.log(document.getElementById("PIDlg").value);
+            var url="https://www.luogu.com.cn/problem/"+String(document.getElementById("PIDlg").value);
+            jmp(url);
+        }
+        function jmpcf(){
+            var selectElement = document.getElementById('mySelect');
+            var selectedValue = selectElement.options[selectElement.selectedIndex].value;
+            var url="https://codeforces.com/problemset/problem/"+String(document.getElementById("PIDcf").value)+"/"+String(selectedValue);
+            jmp(url);
+        }
+        function jmpuva(){
+            //var url="https://www.luogu.com.cn/problem/"+String(document.getElementById(PIDlg).innerHTML);
+            //jmp(url);
+            alert("暂不支持!");
+        }
+    </script>
+    </body></html>
